@@ -41,8 +41,8 @@ Projeto desenvolvido especialmente para o **Lar das Moças Cegas de Santos**, co
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seuusuario/visao-segura.git
-cd visao-segura
+git clone https://github.com/murilocamargo05/Caneta-Inteligente.git
+cd Caneta-Inteligente
 ```
 
 ### 2. Instale as dependências
