@@ -51,32 +51,28 @@ cd Caneta-Inteligente
 pip install opencv-python pytesseract pyttsx3 tensorflow
 ```
 
-### 3. Instale o Tesseract OCR
+### 3. Instale o Tesseract OCR passo a passo
 
-Baixe e instale o Tesseract:
-🔗 [Tesseract OCR](https://github.com/tesseract-ocr/tesseract)
+1. Acesse o repositório oficial do Tesseract: 🔗 [Tesseract OCR](https://github.com/tesseract-ocr/tesseract)
+2. Baixe a versão adequada para o seu sistema operacional (Windows, macOS ou Linux).
+3. Durante a instalação, anote o caminho onde o Tesseract foi instalado.
+4. Certifique-se de que o idioma português está instalado:
 
-Durante a instalação, anote o caminho da instalação, por exemplo:
+   * Abra o terminal ou prompt de comando e digite:
 
-```
-C:\Program Files\Tesseract-OCR\tesseract.exe
-```
-
-Depois, no código, atualize a linha:
+     ```bash
+     tesseract --list-langs
+     ```
+   * Caso `por` não esteja listado, baixe `por.traineddata` e coloque na pasta `tessdata` do Tesseract.
+5. No seu código Python (`tensorflow2.py`), adicione a linha:
 
 ```python
-pytesseract.pytesseract.tesseract_cmd = r'C:\CAMINHO\Tesseract-OCR\tesseract.exe'
+import pytesseract
+# Atualize o caminho conforme o local da instalação do Tesseract
+pytesseract.pytesseract.tesseract_cmd = "C:\\CAMINHO\\DO\\TESSERACT\\tesseract.exe"
 ```
 
-### 4. Instale o idioma português no Tesseract (se necessário)
-
-Verifique os idiomas instalados:
-
-```bash
-tesseract --list-langs
-```
-
-Se o português não estiver listado, baixe o idioma `por.traineddata` e coloque na pasta `tessdata`.
+Substitua `C:\CAMINHO\DO\TESSERACT\tesseract.exe` pelo caminho real do seu computador.
 
 ---
 
@@ -86,7 +82,7 @@ Se o português não estiver listado, baixe o idioma `por.traineddata` e coloque
 2. Execute o script principal:
 
 ```bash
-python visao_segura.py
+python tensorflow2.py
 ```
 
 3. A webcam será ativada.
